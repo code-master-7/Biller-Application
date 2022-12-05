@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Biller</string>
+    <string name="todo">TODO</string>
+    <string name="biller">Biller</string>
+    <string name="address">Address</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="e_mail">E-mail</string>
+    <string name="gst_number">GST Number</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="number">Number</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="item_name">Item Name</string>
+    <string name="price">Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="Biller">Biller_OTP</string>
+    <string name="description">OTP for Biller application</string>
+</resources>
