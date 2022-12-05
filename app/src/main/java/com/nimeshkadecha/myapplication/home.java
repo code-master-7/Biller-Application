@@ -58,6 +58,7 @@ public class home extends AppCompatActivity {
         number = findViewById(R.id.contact);
         date = findViewById(R.id.date);
         backup = findViewById(R.id.backup);
+        backup.setVisibility(View.INVISIBLE);
 
 //        Generating and formating date --------------------------
         Date c = Calendar.getInstance().getTime();
