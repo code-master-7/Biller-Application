@@ -13,4 +13,12 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <!--        <item name="boxStrokeColor">#00CCFF</item>-->
+        <item name="boxBackgroundColor" >#FFFFFF</item>
+    </style>
+    <style name="Navagation">
+        <item name="android:background">#15E5FF</item>
+        <item name="android:text">@color/black</item>
+    </style>
 </resources>

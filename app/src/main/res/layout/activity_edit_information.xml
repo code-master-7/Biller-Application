@@ -15,6 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="wrap_content"
@@ -28,7 +30,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/TextInputLayout"
+            android:layout_marginTop="10dp"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:hint="@string/name"
@@ -50,7 +53,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPassword"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/TextInputLayout"
+            android:layout_marginTop="10dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="@string/password"
@@ -73,7 +77,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutAddress"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/TextInputLayout"
+            android:layout_marginTop="10dp"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:hint="@string/address"
@@ -98,8 +103,9 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutGST_Number"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/TextInputLayout"
             android:layout_width="380dp"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:hint="@string/gst_number"
             app:endIconMode="clear_text"
@@ -118,7 +124,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout4"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/TextInputLayout"
+            android:layout_marginTop="10dp"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:hint="@string/contact_number"
@@ -145,7 +152,6 @@
         android:id="@+id/update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="update"
         android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"

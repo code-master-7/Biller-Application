@@ -20,9 +20,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-
+        android:textSize="30sp"
         android:text="REGISTER"
-        android:textSize="30dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="@+id/include4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include4" />
@@ -39,11 +39,12 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/TextInputLayout"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:hint="@string/name"
             app:endIconMode="clear_text"
+            android:layout_marginTop="32dp"
             app:helperText="Require*"
             app:helperTextTextColor="@color/design_default_color_error"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,11 +62,12 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutEmail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/TextInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="@string/e_mail"
             app:endIconMode="clear_text"
+            
             app:helperText="Required*"
             app:helperTextTextColor="@color/design_default_color_error"
             app:layout_constraintEnd_toEndOf="parent"
@@ -85,7 +87,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPassword"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/TextInputLayout"
+            
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="@string/password"
@@ -105,35 +108,10 @@
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutAddress"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/address"
-            app:counterEnabled="true"
-            app:counterMaxLength="200"
-            app:endIconMode="clear_text"
-            app:helperText="Require*"
-            app:helperTextTextColor="@color/design_default_color_error"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
-            app:startIconDrawable="@drawable/ic_baseline_home_work_24">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/address"
-                android:layout_width="380dp"
-                android:layout_height="wrap_content"
-                android:maxLength="200"
-                android:textColorHint="#757575"
-                tools:ignore="TextContrastCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutGST_Number"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/TextInputLayout"
+            
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:hint="@string/gst_number"
@@ -153,7 +131,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout4"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/TextInputLayout"
+            
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:hint="@string/contact_number"
@@ -175,6 +154,33 @@
                 android:maxLength="10"
                 tools:ignore="TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutAddress"
+            style="@style/TextInputLayout"
+            
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/address"
+            app:counterEnabled="true"
+            app:counterMaxLength="200"
+            app:endIconMode="clear_text"
+            app:helperText="Require*"
+            app:helperTextTextColor="@color/design_default_color_error"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+            app:startIconDrawable="@drawable/ic_baseline_home_work_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/address"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:maxLength="200"
+                android:textColorHint="#757575"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+        
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

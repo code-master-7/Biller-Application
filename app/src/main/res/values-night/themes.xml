@@ -13,6 +13,16 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
-        <item name="textInputOutlinedStyle">@color/white</item>
+        <item name="textInputOutlinedStyle">@color/test</item>
+    </style>
+    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+<!--        <item name="boxStrokeColor">#00CCFF</item>-->
+        <item name="boxBackgroundColor" >#313335</item>
+<!--        <item name="editTextColor">#00FF19</item>-->
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+    <style name="Navagation">
+        <item name="android:background">#006572</item>
+        <item name="android:text">@color/black</item>
     </style>
 </resources>

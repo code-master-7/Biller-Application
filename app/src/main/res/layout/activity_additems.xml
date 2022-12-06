@@ -12,9 +12,20 @@
 
     </include>
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Products"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutitemname"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/item_name"
@@ -22,7 +33,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="32dp"
         android:layout_marginLeft="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintTop_toBottomOf="@+id/title"
         app:startIconDrawable="@drawable/ic_baseline_shopping_bag_24">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -34,13 +45,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout7"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/price"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutitemname"
         app:startIconDrawable="@drawable/ic_money">
@@ -54,12 +65,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/layoutQuantity"
         android:hint="@string/quantity"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,8 +96,7 @@
         app:layout_constraintStart_toStartOf="@+id/layoutQuantity"
         app:layout_constraintTop_toBottomOf="@+id/layoutQuantity" />
 
-
-        <include
+            <include
         layout="@layout/navagation_drower"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

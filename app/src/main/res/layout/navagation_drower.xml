@@ -5,7 +5,7 @@
     android:layout_width="290dp"
     android:layout_height="match_parent"
     android:id="@+id/navigation"
-    android:background="#84F1FF"
+    style="@style/Navagation"
     >
 
     <ImageView
