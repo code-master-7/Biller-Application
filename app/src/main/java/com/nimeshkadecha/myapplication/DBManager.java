@@ -31,7 +31,7 @@ public class DBManager extends SQLiteOpenHelper {
                                         "subtotal Integer," +//4
                                         "customerName TEXT," +//5
                                         "customerNumber TEXT," +//6
-                                        "date TEXT," +//7
+                                        "date Date," +//7
                                         "billId TEXT ," +//8
                                         "seller TEXT," +//9
                                         "backup Integer)");//10
@@ -39,7 +39,7 @@ public class DBManager extends SQLiteOpenHelper {
         DB.execSQL("Create TABLE customer(billId TEXT primary key," +
                                         "customerName TEXT," +
                                         "customerNumber TEXT," +
-                                        "date TEXT," +
+                                        "date Date," +
                                         "total TEXT," +
                                         "seller TEXT," +
                                         "backup Integer)");

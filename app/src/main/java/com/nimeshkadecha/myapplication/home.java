@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,8 +51,8 @@ public class home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        final int[] billIDd = {DB.getbillid()};
-        billIDd[0]++;
+//        final int[] billIDd = {DB.getbillid()};
+//        billIDd[0]++;
 
 //        Finding edit texts
         name = findViewById(R.id.name);
@@ -157,7 +158,7 @@ public class home extends AppCompatActivity {
         product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                billIDd[0]++;
+//                billIDd[0]++;
                 Intent intent = new Intent(home.this, Additems.class);
 
                 String nametxt, numbertxt, datetxt;
@@ -183,10 +184,12 @@ public class home extends AppCompatActivity {
                     } else {
                         datetxt = date.getText().toString();
 
+                        int billIDd = DB.getbillid();
+
                         intent.putExtra("cName", nametxt);
                         intent.putExtra("cNumber", numbertxt);
                         intent.putExtra("date", datetxt);
-                        intent.putExtra("billId", billIDd[0]);
+                        intent.putExtra("billId", billIDd);
                         intent.putExtra("seller", email);
                         startActivity(intent);
                     }
