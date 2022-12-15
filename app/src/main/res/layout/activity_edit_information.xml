@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register"
-    >
+    tools:context=".register">
 
     <include
         android:id="@+id/include4"
@@ -16,14 +15,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Header">
@@ -31,9 +29,9 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutName"
             style="@style/TextInputLayout"
-            android:layout_marginTop="10dp"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="@string/name"
             app:endIconMode="clear_text"
             app:helperText="Don't change 'Name' if you have Backup in cloud*"
@@ -54,9 +52,9 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPassword"
             style="@style/TextInputLayout"
-            android:layout_marginTop="10dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="@string/password"
             app:endIconMode="password_toggle"
             app:helperText="Required*"
@@ -78,9 +76,9 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutAddress"
             style="@style/TextInputLayout"
-            android:layout_marginTop="10dp"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="@string/address"
             app:counterEnabled="true"
             app:counterMaxLength="200"
@@ -105,8 +103,8 @@
             android:id="@+id/textInputLayoutGST_Number"
             style="@style/TextInputLayout"
             android:layout_width="380dp"
-            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="@string/gst_number"
             app:endIconMode="clear_text"
             app:helperText="Require*"
@@ -125,9 +123,9 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout4"
             style="@style/TextInputLayout"
-            android:layout_marginTop="10dp"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:hint="@string/contact_number"
             app:endIconMode="clear_text"
             app:helperText="Don't change 'Number' if you have Backup in cloud*"
@@ -152,29 +150,31 @@
         android:id="@+id/update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update"
+        android:text="@string/update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Show "
+        android:text="@string/show"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/update"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/Header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include4" />
@@ -183,15 +183,16 @@
         android:id="@+id/Delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete"
+        android:text="@string/delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/update"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        tools:ignore="TextContrastCheck" />
 
     <include
-        layout="@layout/confirmation"
         android:id="@+id/confirm"
+        layout="@layout/confirmation"
         android:layout_width="350dp"
         android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"

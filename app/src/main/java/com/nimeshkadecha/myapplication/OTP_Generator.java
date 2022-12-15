@@ -1,9 +1,5 @@
 package com.nimeshkadecha.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-
 import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -17,6 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import java.util.Objects;
 import java.util.Random;
@@ -87,7 +87,7 @@ public class OTP_Generator extends AppCompatActivity {
         });
     }
 
-//    OTP validation
+    //    OTP validation
     private boolean OTPValidate(String otpInput) {
         if (otpInput.length() < 6) {
             return false;
@@ -96,7 +96,7 @@ public class OTP_Generator extends AppCompatActivity {
         }
     }
 
-//    Notification code -----------------------------------------------------------------
+    //    Notification code -----------------------------------------------------------------
     class BackgroungTask extends AsyncTask<String, Void, Void> {
 
         @Override

@@ -14,61 +14,64 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textbackup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Backup to Cloud"
-        android:textSize="24sp"
         android:layout_marginTop="25dp"
-        android:id="@+id/textbackup"
+        android:text="@string/backup_to_cloud"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include2"
-        />
+        tools:ignore="TextContrastCheck" />
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload TO Cloud"
-        android:layout_marginTop="50dp"
         android:id="@+id/Upload"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textbackup" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Download From Cloud"
         android:layout_marginTop="50dp"
+        android:text="@string/upload_to_cloud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textbackup"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
         android:id="@+id/Download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/download_from_cloud"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Upload" />
+        app:layout_constraintTop_toBottomOf="@+id/Upload"
+        tools:ignore="TextContrastCheck" />
 
 
     <Button
+        android:id="@+id/saveBackup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SavaBackup"
         android:layout_marginTop="50dp"
-        android:id="@+id/saveBackup"
+        android:text="@string/savabackup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Download"
 
-        />
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/bShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Show Data"
+        android:text="@string/show_data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saveBackup" />
+        app:layout_constraintTop_toBottomOf="@+id/saveBackup"
+        tools:ignore="TextContrastCheck" />
 
-    <include
-        layout="@layout/navagation_drower"/>
+    <include layout="@layout/navagation_drower" />
 
 
     <TextView

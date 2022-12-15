@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -321,42 +320,22 @@ public class customer_Info extends AppCompatActivity {
 
                     if (customerDetail.getCount() == 0) {
                         Toast.makeText(customer_Info.this, "No Entry Exist", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
+                    } else {
 //                        ------------------------------------------------------------------------------
                         if (checker == 3 || checker == 4) {
+//                            Date & range search
                             customerDetail.moveToFirst();
                             do {
                                 table5.addCell(new Cell().add(new Paragraph("Customer Name").setFontSize(14)).setBorder(Border.NO_BORDER));
                                 table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(5) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
                                 table5.addCell(new Cell().add(new Paragraph("Customer Number").setFontSize(14)).setBorder(Border.NO_BORDER));
                                 table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(6) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-//                            table3.addCell(new Cell().add(new Paragraph("Customer Name").setFontSize(14)));
-//                            table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(5)+"").setFontSize(14)));
-//
-//                            table3.addCell(new Cell().add(new Paragraph("Customer Number").setFontSize(14)));
-//                            table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(6)+"").setFontSize(14)));
-//                                if (!ToDate.isEmpty() && !datetxt.isEmpty()) {
-//                                    table5.addCell(new Cell().add(new Paragraph("From Date").setFontSize(14)).setBorder(Border.NO_BORDER));
-//                                    table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(7) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-//                                    table5.addCell(new Cell().add(new Paragraph("To Date").setFontSize(14)).setBorder(Border.NO_BORDER));
-//                                    table5.addCell(new Cell().add(new Paragraph(ToDate + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-//
-//                                 table3.addCell(new Cell().add(new Paragraph("From Date").setFontSize(14)));
-//                                table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(7)+"").setFontSize(14)));
-//                                table3.addCell(new Cell().add(new Paragraph("To Date").setFontSize(14)));
-//                                table3.addCell(new Cell().add(new Paragraph(ToDate+"").setFontSize(14)));
-//                                } else {
-                                    table5.addCell(new Cell().add(new Paragraph("Date").setFontSize(14)).setBorder(Border.NO_BORDER));
-                                    table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(7) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                                    table5.addCell(new Cell().setBorder(Border.NO_BORDER));
-                                    table5.addCell(new Cell().setBorder(Border.NO_BORDER));
-//                                table3.addCell(new Cell().add(new Paragraph("Date").setFontSize(14)));
-//                                table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(7)+"").setFontSize(14)));
-//                                }
 
-//                            table3.addCell((new Cell().add(new Paragraph("Bill ID: ").setFontSize(14))));
-//                            table3.addCell((new Cell().add(new Paragraph(customerDetail.getString(8)).setFontSize(14))));
+                                table5.addCell(new Cell().add(new Paragraph("Date").setFontSize(14)).setBorder(Border.NO_BORDER));
+                                table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(7) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                                table5.addCell(new Cell().setBorder(Border.NO_BORDER));
+                                table5.addCell(new Cell().setBorder(Border.NO_BORDER));
+
                                 table5.addCell(new Cell().add(new Paragraph("Bill ID").setFontSize(14)).setBorder(Border.NO_BORDER));
                                 table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(8) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
                                 table5.addCell(new Cell().setBorder(Border.NO_BORDER));
@@ -368,8 +347,6 @@ public class customer_Info extends AppCompatActivity {
                                 table5.addCell(new Cell().add(new Paragraph("Product Quantity")));
                                 table5.addCell(new Cell().add(new Paragraph("Sub Total")));
 
-//                                customerDetail.moveToFirst();
-
 //                                this index help to privent repit table printing
                                 int index = 0;
                                 int total = 0;
@@ -379,6 +356,7 @@ public class customer_Info extends AppCompatActivity {
                                 } else {
                                     list.moveToFirst();
                                     do {
+//                                        Index 8 is bill ID
                                         if (customerDetail.getString(8).equals(list.getString(8))) {
                                             table5.addCell(new Cell().add(new Paragraph(list.getString(1) + "")));
                                             table5.addCell(new Cell().add(new Paragraph(list.getString(2) + "")));
@@ -390,7 +368,7 @@ public class customer_Info extends AppCompatActivity {
                                     } while (list.moveToNext());
                                 }
 
-                                int ix = customerDetail.getPosition() + index;
+                                int ix = customerDetail.getPosition() + index - 1;
                                 customerDetail.moveToPosition(ix);
 
                                 table5.addCell(new Cell(1, 3).add(new Paragraph("Total")));
@@ -399,40 +377,19 @@ public class customer_Info extends AppCompatActivity {
 
                             } while (customerDetail.moveToNext());
 // -----------------------------------------------------------------------------------------------------------------------
-                        }
-                        else if(checker == 1 || checker == 2){
+                        } else if (checker == 1 || checker == 2) {
                             customerDetail.moveToFirst();
                             do {
                                 table5.addCell(new Cell().add(new Paragraph("Customer Name").setFontSize(14)).setBorder(Border.NO_BORDER));
                                 table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(5) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
                                 table5.addCell(new Cell().add(new Paragraph("Customer Number").setFontSize(14)).setBorder(Border.NO_BORDER));
                                 table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(6) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-//                            table3.addCell(new Cell().add(new Paragraph("Customer Name").setFontSize(14)));
-//                            table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(5)+"").setFontSize(14)));
-//
-//                            table3.addCell(new Cell().add(new Paragraph("Customer Number").setFontSize(14)));
-//                            table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(6)+"").setFontSize(14)));
-//                                if (!ToDate.isEmpty() && !datetxt.isEmpty()) {
-//                                    table5.addCell(new Cell().add(new Paragraph("From Date").setFontSize(14)).setBorder(Border.NO_BORDER));
-//                                    table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(7) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-//                                    table5.addCell(new Cell().add(new Paragraph("To Date").setFontSize(14)).setBorder(Border.NO_BORDER));
-//                                    table5.addCell(new Cell().add(new Paragraph(ToDate + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-//
-//                                 table3.addCell(new Cell().add(new Paragraph("From Date").setFontSize(14)));
-//                                table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(7)+"").setFontSize(14)));
-//                                table3.addCell(new Cell().add(new Paragraph("To Date").setFontSize(14)));
-//                                table3.addCell(new Cell().add(new Paragraph(ToDate+"").setFontSize(14)));
-//                                } else {
-                                    table5.addCell(new Cell().add(new Paragraph("Date").setFontSize(14)).setBorder(Border.NO_BORDER));
-                                    table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(7) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                                    table5.addCell(new Cell().setBorder(Border.NO_BORDER));
-                                    table5.addCell(new Cell().setBorder(Border.NO_BORDER));
-//                                table3.addCell(new Cell().add(new Paragraph("Date").setFontSize(14)));
-//                                table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(7)+"").setFontSize(14)));
-//                                }
 
-//                            table3.addCell((new Cell().add(new Paragraph("Bill ID: ").setFontSize(14))));
-//                            table3.addCell((new Cell().add(new Paragraph(customerDetail.getString(8)).setFontSize(14))));
+                                table5.addCell(new Cell().add(new Paragraph("Date").setFontSize(14)).setBorder(Border.NO_BORDER));
+                                table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(7) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                                table5.addCell(new Cell().setBorder(Border.NO_BORDER));
+                                table5.addCell(new Cell().setBorder(Border.NO_BORDER));
+
                                 table5.addCell(new Cell().add(new Paragraph("Bill ID").setFontSize(14)).setBorder(Border.NO_BORDER));
                                 table5.addCell(new Cell().add(new Paragraph(customerDetail.getString(8) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
                                 table5.addCell(new Cell().setBorder(Border.NO_BORDER));
@@ -544,7 +501,7 @@ public class customer_Info extends AppCompatActivity {
 //                Displaying data
                         document.add(table1);
                         document.add(new Paragraph("\n"));
-                        if (checker <=4) {
+                        if (checker <= 4) {
                             document.add(table5);
                         } else {
                             document.add(table3);

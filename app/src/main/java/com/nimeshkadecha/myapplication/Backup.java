@@ -1,9 +1,5 @@
 package com.nimeshkadecha.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-
 import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -12,12 +8,15 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import java.util.Objects;
 import java.util.Random;
@@ -86,7 +85,7 @@ public class Backup extends AppCompatActivity {
         });
     }
 
-//    Validating OTP
+    //    Validating OTP
     private boolean OTPValidate(String otpInput) {
         if (otpInput.length() < 6) {
             return false;
@@ -95,7 +94,7 @@ public class Backup extends AppCompatActivity {
         }
     }
 
-//    Notification Process in Background
+    //    Notification Process in Background
     class BackgroungTask extends AsyncTask<String, Void, Void> {
         String b = "BackupOTP";
 

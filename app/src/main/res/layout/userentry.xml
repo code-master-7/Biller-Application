@@ -1,134 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="12dp"
-    app:cardCornerRadius="16dp"
     android:layout_margin="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="12dp"
 
     >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:orientation="vertical">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            >-->
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Index: "-->
-<!--                android:textColor="@color/black"-->
-<!--                style="bold">-->
-
-<!--            </TextView>-->
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:id="@+id/textindex"-->
-<!--                android:textColor="@color/black"-->
-<!--                style="bold">-->
-
-<!--            </TextView>-->
-<!--        </LinearLayout>-->
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
-            >
+            android:orientation="horizontal">
 
             <TextView
+                style="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Item name: "
-                android:textColor="@color/black"
-                style="bold">
+                android:text="@string/item_name"
+                android:textColor="@color/black">
 
             </TextView>
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/textitem"
-                android:textColor="@color/black"
-                style="bold">
+                style="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black">
 
 
             </TextView>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
-            >
+            android:orientation="horizontal">
+
             <TextView
+                style="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Item Price: "
-                android:textColor="@color/black"
-                style="bold">
+                android:text="@string/item_price"
+                android:textColor="@color/black">
 
             </TextView>
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/textprice"
-                android:textColor="@color/black"
-                style="bold">
+                style="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black">
 
             </TextView>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
-            >
+            android:orientation="horizontal">
+
             <TextView
+                style="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Item quantity: "
-                android:textColor="@color/black"
-                style="bold">
+                android:text="@string/item_quantity"
+                android:textColor="@color/black">
 
             </TextView>
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/textquantity"
-                android:textColor="@color/black"
-                style="bold">
+                style="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black">
 
             </TextView>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
-            >
+            android:orientation="horizontal">
+
             <TextView
+                style="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="subtotal : "
-                android:textColor="@color/black"
-                style="bold">
+                android:text="@string/subtotal"
+                android:textColor="@color/black">
 
             </TextView>
+
             <TextView
+                android:id="@+id/textsubtotal"
+                style="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textsubtotal"
-                android:textColor="@color/black"
-                style="bold">
+                android:textColor="@color/black">
 
             </TextView>
         </LinearLayout>

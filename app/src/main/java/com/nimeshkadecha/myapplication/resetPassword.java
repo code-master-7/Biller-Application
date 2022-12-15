@@ -1,7 +1,5 @@
 package com.nimeshkadecha.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
 
@@ -41,7 +41,7 @@ public class resetPassword extends AppCompatActivity {
 //        WORKING WITH TOOLBAR Ends-------------------------------------------------------------
     }
 
-//    validating
+    //    validating
     private boolean PasswordValidation(EditText password, EditText confirmPassword) {
         String passwordInput = password.getText().toString();
         String confirmPasswordInput = confirmPassword.getText().toString();
@@ -52,7 +52,7 @@ public class resetPassword extends AppCompatActivity {
         }
     }
 
-//    RESETING PASSWORD
+    //    RESETING PASSWORD
     public void Confirm(View view) {
         boolean VP = PasswordValidation(password, confirmPassword);
         if (VP) {

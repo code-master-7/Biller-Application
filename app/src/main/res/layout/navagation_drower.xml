@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="290dp"
-    android:layout_height="match_parent"
     android:id="@+id/navigation"
     style="@style/Navagation"
-    >
+    android:layout_width="290dp"
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/btnBack"
         android:layout_width="39dp"
         android:layout_height="36dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back" />
@@ -23,8 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="About"
-        android:textSize="20dp"
+        android:text="@string/about"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnBack"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,8 +35,8 @@
         android:layout_marginTop="101dp"
         android:minHeight="48dp"
         android:onClick="customerInfo"
-        android:text="Customer Information"
-        android:textSize="20dp"
+        android:text="@string/customer_information"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -49,19 +48,19 @@
         android:layout_marginTop="10dp"
         android:minHeight="48dp"
         android:onClick="editInfo"
-        android:text="Edit Information"
-        android:textSize="20dp"
+        android:text="@string/edit_information"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerinfo" />
 
     <TextView
+        android:id="@+id/backup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Backup"
-        android:id="@+id/backup"
-        android:textSize="20dp"
         android:layout_marginTop="10dp"
+        android:text="@string/backup"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editInfo" />

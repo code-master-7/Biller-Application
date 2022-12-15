@@ -16,8 +16,8 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Products"
         android:fontFamily="sans-serif-medium"
+        android:text="@string/add_products"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,11 +28,11 @@
         style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="10dp"
         android:hint="@string/item_name"
         app:endIconMode="clear_text"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="10dp"
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:startIconDrawable="@drawable/ic_baseline_shopping_bag_24">
 
@@ -48,10 +48,10 @@
         style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/price"
-        android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="25dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/price"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutitemname"
         app:startIconDrawable="@drawable/ic_money">
@@ -65,14 +65,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutQuantity"
         style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/layoutQuantity"
-        android:hint="@string/quantity"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
+        android:hint="@string/quantity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout7"
@@ -92,18 +92,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Add Item"
+        android:text="@string/add_item"
         app:layout_constraintStart_toStartOf="@+id/layoutQuantity"
-        app:layout_constraintTop_toBottomOf="@+id/layoutQuantity" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutQuantity"
+        tools:ignore="TextContrastCheck" />
 
-            <include
+    <include
+        android:id="@+id/navigation"
         layout="@layout/navagation_drower"
+        android:layoutAnimation="@android:anim/linear_interpolator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/navigation"
-        android:layoutAnimation="@android:anim/linear_interpolator"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
     </include>
 
@@ -112,9 +112,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Show List"
+        android:text="@string/show_list"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutQuantity" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutQuantity"
+        tools:ignore="TextContrastCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

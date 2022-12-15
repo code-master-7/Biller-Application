@@ -1,11 +1,6 @@
 package com.nimeshkadecha.myapplication;
 
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -18,6 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.util.Objects;
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 //            Toast.makeText(this, "Storage permision is Granted", Toast.LENGTH_SHORT).show();
             permisions.setVisibility(View.INVISIBLE);
         } else {
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE}, StoragePermisionCode);
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, StoragePermisionCode);
             permisions.setVisibility(View.VISIBLE);
         }
 
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    Working on requesting STORAGE permision ----------------------------------------
+    //    Working on requesting STORAGE permision ----------------------------------------
     private void requestStoragePermisions() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             new AlertDialog.Builder(this)
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE}, StoragePermisionCode);
+                            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, StoragePermisionCode);
                         }
                     })
                     .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     })
                     .create().show();
         } else {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE}, StoragePermisionCode);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, StoragePermisionCode);
         }
     }
 
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //    Code for verify Password Ends ------------------------------------------------------------
 
-//    Going to register page
+    //    Going to register page
     public void register(View view) {
         Intent register = new Intent(this, register.class);
         startActivity(register);

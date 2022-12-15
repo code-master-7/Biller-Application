@@ -1,42 +1,30 @@
 package com.nimeshkadecha.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
-import android.net.Network;
 import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.internal.service.Common;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
-import java.net.NetworkInterface;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
 import java.util.Map;
 import java.util.Objects;
 
@@ -45,7 +33,7 @@ public class Backup_Working extends AppCompatActivity {
     private ImageView menu, backBtn;
     private View navagationDrawer;
 
-    private Button upload, download, show,saveBackup;
+    private Button upload, download, show, saveBackup;
 
     private boolean entry;
 
@@ -54,7 +42,8 @@ public class Backup_Working extends AppCompatActivity {
     String id;
 
     DBManager DB = new DBManager(this);
-    int billId ;
+    int billId;
+
     //    Verifying internet is ON
     boolean checkConnection() {
         ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -262,7 +251,6 @@ public class Backup_Working extends AppCompatActivity {
                         c2.moveToFirst();
                         int total = 0;
                         do {
-                            Log.d("ENimesh", "Index = " + c2.getColumnIndex("backup"));
                             int backupIndex = c2.getColumnIndex("backup");
                             if (c2.getInt(backupIndex) == 0) {
                                 String id = c2.getString(8);
@@ -332,17 +320,17 @@ public class Backup_Working extends AppCompatActivity {
             public void onClick(View v) {
 
                 boolean b = DB.autoInsertCustomer();
-                if(b){
+                if (b) {
                     Toast.makeText(Backup_Working.this, "Done", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     Toast.makeText(Backup_Working.this, "ERROR", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 //        Save button -------------------------------------------------------------------------
     }
-//    Downloading DATA
+
+    //    Downloading DATA
     class sleep extends Thread {
 
         sleep() {
@@ -370,7 +358,6 @@ public class Backup_Working extends AppCompatActivity {
                         if (snapshot.exists()) {
                             String key = snapshot.getKey();
 //                            Thread.sleep(1000);
-//                            Log.d("ENimesh", "childs = " + snapshot.getKey());
                             reference.child("Biller").child(sellerNumber).child(sname).child(key).addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot1) {
@@ -389,8 +376,8 @@ public class Backup_Working extends AppCompatActivity {
 
 //                                    DownloaData(user,sname,sellerNumber,cname,number,pname,pnumber,pqty,subtotal,date);
 
-                                        if(bidCHECKER !=Integer.parseInt(billID)){
-                                            if(bidCHECKER!=-1){
+                                        if (bidCHECKER != Integer.parseInt(billID)) {
+                                            if (bidCHECKER != -1) {
 //                                                Boolean customerInsert = DB.InsertCustomer(String.valueOf(generated_ID), cname, number, date, user, 1);
                                             }
 
@@ -399,8 +386,7 @@ public class Backup_Working extends AppCompatActivity {
                                             id = String.valueOf(billId);
                                             generated_ID = billId;
                                             bidCHECKER = Integer.parseInt(billID);
-                                        }
-                                        else{
+                                        } else {
                                             billId = generated_ID;
                                             id = String.valueOf(billId);
                                         }
@@ -413,7 +399,6 @@ public class Backup_Working extends AppCompatActivity {
                                         } else {
                                             entry = false;
                                         }
-//                                        Log.d("ENimesh", "\n\nONE ROUND COMPLETE\n\n");
 //                                        Thread.sleep(2000);
                                     } catch (Exception e) {
                                     }
@@ -453,7 +438,8 @@ public class Backup_Working extends AppCompatActivity {
 
             try {
                 Thread.sleep(100);
-            }catch (Exception w){}
+            } catch (Exception w) {
+            }
         }
     }
 }

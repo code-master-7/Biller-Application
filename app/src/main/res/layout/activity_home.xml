@@ -17,15 +17,15 @@
     </include>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutNumber"
         style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/number"
-        app:endIconMode="clear_text"
-        android:id="@+id/layoutNumber"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
+        android:hint="@string/number"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout9"
@@ -47,8 +47,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="35dp"
+        android:layout_marginRight="10dp"
         android:hint="@string/customer_name"
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,8 +67,8 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Customer Information"
         android:layout_marginTop="32dp"
+        android:text="@string/enter_customer_information"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
-        android:hint="date"
+        android:hint="@string/date"
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,8 +94,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
-            android:text=""
             android:maxLength="10"
+            android:text=""
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -103,20 +103,20 @@
         android:id="@+id/products"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Products"
+        android:text="@string/enter_products"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8"
+        tools:ignore="TextContrastCheck" />
 
     <include
+        android:id="@+id/navigation"
         layout="@layout/navagation_drower"
+        android:layoutAnimation="@android:anim/linear_interpolator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/navigation"
-        android:layoutAnimation="@android:anim/linear_interpolator"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
     </include>
 

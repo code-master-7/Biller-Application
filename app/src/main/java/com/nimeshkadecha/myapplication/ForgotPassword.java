@@ -1,7 +1,5 @@
 package com.nimeshkadecha.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
 import java.util.Random;
@@ -41,7 +41,7 @@ public class ForgotPassword extends AppCompatActivity {
         number = findViewById(R.id.contactnumber);
     }
 
-//    Validation on NUMBER
+    //    Validation on NUMBER
     private boolean numberValidation(EditText number) {
         String numberInput = number.getText().toString();
         if (numberInput.length() == 10) {
@@ -51,7 +51,7 @@ public class ForgotPassword extends AppCompatActivity {
         }
     }
 
-//    Verifying otp and go to OTP_GEN
+    //    Verifying otp and go to OTP_GEN
     public void GetOTP(View view) {
         boolean NV = numberValidation(number);
         if (NV) {

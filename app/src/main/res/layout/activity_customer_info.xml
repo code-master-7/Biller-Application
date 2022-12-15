@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".customer_Info">
+
     <include
         android:id="@+id/include"
         layout="@layout/toolbar"
@@ -18,130 +19,135 @@
         android:id="@+id/title1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Customers"
         android:fontFamily="sans-serif-medium"
+        android:text="@string/customers"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/TextInputLayout"
         android:id="@+id/namelayout"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
-        android:hint="Search By Customer Name"
-        app:startIconDrawable="@drawable/ic_baseline_person_24"
-        android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:hint="@string/search_by_customer_name"
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title1">
+        app:layout_constraintTop_toBottomOf="@+id/title1"
+        app:startIconDrawable="@drawable/ic_baseline_person_24">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/name"
-            android:inputType="text">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            tools:ignore="TextContrastCheck">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/TextInputLayout"
         android:id="@+id/contactlayout"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="Search By Contact Number"
         android:layout_marginLeft="10dp"
-        app:startIconDrawable="@drawable/ic_phone"
-        app:endIconMode="clear_text"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
+        android:hint="@string/search_by_contact_number"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/namelayout">
+        app:layout_constraintTop_toBottomOf="@+id/namelayout"
+        app:startIconDrawable="@drawable/ic_phone">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:maxLength="10"
             android:id="@+id/contact"
-            android:inputType="number">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="10"
+            tools:ignore="TextContrastCheck">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/TextInputLayout"
         android:id="@+id/datelayout"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="Search Date or Start Range"
         android:layout_marginLeft="10dp"
-        app:startIconDrawable="@drawable/date"
-        app:endIconMode="clear_text"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
+        android:hint="@string/search_date_or_start_range"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactlayout">
+        app:layout_constraintTop_toBottomOf="@+id/contactlayout"
+        app:startIconDrawable="@drawable/date">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/date"
-            android:inputType="date">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="date"
+            tools:ignore="TextContrastCheck">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/TextInputLayout"
         android:id="@+id/rangedate"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="End of Date"
         android:layout_marginLeft="10dp"
-        app:startIconDrawable="@drawable/date"
-        app:endIconMode="clear_text"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
+        android:hint="@string/end_of_date"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datelayout">
+        app:layout_constraintTop_toBottomOf="@+id/datelayout"
+        app:startIconDrawable="@drawable/date">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/rangeDatetEDT"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/rangeDatetEDT"
-            android:inputType="date">
+            android:inputType="date"
+            tools:ignore="TextContrastCheck">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/TextInputLayout"
         android:id="@+id/billIDlayout"
+        style="@style/TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="Search By BillID"
-        app:startIconDrawable="@drawable/ic_numbers"
-        app:endIconMode="clear_text"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
+        android:hint="@string/search_by_billid"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rangedate">
+        app:layout_constraintTop_toBottomOf="@+id/rangedate"
+        app:startIconDrawable="@drawable/ic_numbers">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/billID"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/billID"
-            android:inputType="number">
+            android:inputType="number"
+            tools:ignore="TextContrastCheck">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
@@ -151,33 +157,36 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
         android:layout_marginTop="25dp"
+        android:text="@string/search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/billIDlayout">
+        app:layout_constraintTop_toBottomOf="@+id/billIDlayout"
+        tools:ignore="TextContrastCheck">
 
     </Button>
+
     <Button
+        android:id="@+id/showallData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show All Customers"
-        android:id="@+id/showallData"
         android:layout_marginTop="25dp"
+        android:text="@string/show_all_customers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchbtn">
-    </Button>
+        app:layout_constraintTop_toBottomOf="@+id/searchbtn"
+        tools:ignore="TextContrastCheck"></Button>
 
     <Button
         android:id="@+id/pdfC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Download PDF"
         android:layout_marginTop="25dp"
+        android:text="@string/download_pdf"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/showallData" />
+        app:layout_constraintTop_toBottomOf="@+id/showallData"
+        tools:ignore="TextContrastCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,30 +1,26 @@
 package com.nimeshkadecha.myapplication;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.storage.StorageManager;
+import android.os.storage.StorageVolume;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Environment;
-import android.os.FileUriExposedException;
-import android.os.storage.StorageManager;
-import android.os.storage.StorageVolume;
-import android.provider.MediaStore;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
-
-import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -178,7 +174,6 @@ public class ShowList extends AppCompatActivity {
 
         List<StorageVolume> storageVolumes = storageManager.getStorageVolumes();
 
-        Log.d("ENimesh","name 0= " +storageVolumes.get(0));
 
         storageVolume = storageVolumes.get(0);
 
@@ -204,137 +199,137 @@ public class ShowList extends AppCompatActivity {
 
 //            Creating PDF -------------------------
 
-            class createPDF extends Thread{
+            class createPDF extends Thread {
                 createPDF() throws FileNotFoundException {
 
-                String pdfPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).toString();
+                    String pdfPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).toString();
 //                File name
-                String id = String.valueOf(billId);
+                    String id = String.valueOf(billId);
 
-                String s = getrandom();
+                    String s = getrandom();
 //                Create file object
-                File file = new File(pdfPath, "biller-" + id + "-"+s  + ".pdf");
-                Log.d("ENimesh","Fill= "+file);
-                filename = "biller-" + id + "-"+s +".pdf";
-                OutputStream outputStream = new FileOutputStream(file);
+                    File file = new File(pdfPath, "biller-" + id + "-" + s + ".pdf");
 
-                PdfWriter writer = new PdfWriter(file);
-                PdfDocument pdfDocument = new PdfDocument(writer);
-                Document document = new Document(pdfDocument);
+                    filename = "biller-" + id + "-" + s + ".pdf";
+                    OutputStream outputStream = new FileOutputStream(file);
 
-                float cWidth[] = {120, 220, 120, 100};
-                Table table1 = new Table(cWidth);
+                    PdfWriter writer = new PdfWriter(file);
+                    PdfDocument pdfDocument = new PdfDocument(writer);
+                    Document document = new Document(pdfDocument);
+
+                    float cWidth[] = {120, 220, 120, 100};
+                    Table table1 = new Table(cWidth);
 
 //        Table 1 do this
 //        Want users||||| NAME EMail GST ADDRESS NUMBER
 //                           0  1     3   5       4
 
-                Cursor selerDATA = DB.GetUser(sellertxt);
-                if (selerDATA.getCount() == 0) {
-                    Toast.makeText(ShowList.this, "No Entry Exist", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    selerDATA.moveToFirst();
-                    do {
-                        table1.addCell(new Cell().add(new Paragraph("Seller Name").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table1.addCell(new Cell().add(new Paragraph(selerDATA.getString(0) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table1.addCell(new Cell().add(new Paragraph("Seller Email").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table1.addCell(new Cell().add(new Paragraph(selerDATA.getString(1) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table1.addCell(new Cell().add(new Paragraph("Seller Number").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table1.addCell(new Cell().add(new Paragraph(selerDATA.getString(4) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table1.addCell(new Cell().add(new Paragraph("Seller GST").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table1.addCell(new Cell().add(new Paragraph(selerDATA.getString(3) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table1.addCell(new Cell().add(new Paragraph("Address").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table1.addCell(new Cell().add(new Paragraph(selerDATA.getString(5) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                    } while (selerDATA.moveToNext());
-                }
+                    Cursor selerDATA = DB.GetUser(sellertxt);
+                    if (selerDATA.getCount() == 0) {
+                        Toast.makeText(ShowList.this, "No Entry Exist", Toast.LENGTH_SHORT).show();
+                        return;
+                    } else {
+                        selerDATA.moveToFirst();
+                        do {
+                            table1.addCell(new Cell().add(new Paragraph("Seller Name").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table1.addCell(new Cell().add(new Paragraph(selerDATA.getString(0) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table1.addCell(new Cell().add(new Paragraph("Seller Email").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table1.addCell(new Cell().add(new Paragraph(selerDATA.getString(1) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table1.addCell(new Cell().add(new Paragraph("Seller Number").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table1.addCell(new Cell().add(new Paragraph(selerDATA.getString(4) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table1.addCell(new Cell().add(new Paragraph("Seller GST").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table1.addCell(new Cell().add(new Paragraph(selerDATA.getString(3) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table1.addCell(new Cell().add(new Paragraph("Address").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table1.addCell(new Cell().add(new Paragraph(selerDATA.getString(5) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                        } while (selerDATA.moveToNext());
+                    }
 
 //        Table 2 do this    FROM BILLID
 //        Want display ||||||  customerName=5 customerNumber=6 date=7
 
-                float cWidth3[] = {142, 142, 142, 142};
-                Table table3 = new Table(cWidth3);
+                    float cWidth3[] = {142, 142, 142, 142};
+                    Table table3 = new Table(cWidth3);
 
-                int total = 0;
+                    int total = 0;
 
-                Cursor customerDetail = DB.billTotal(billId);
-                if (customerDetail.getCount() == 0) {
-                    Toast.makeText(ShowList.this, "No Entry Exist", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    customerDetail.moveToFirst();
-                    do {
-                        table3.addCell(new Cell().add(new Paragraph("Customer Name").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(1) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table3.addCell(new Cell().add(new Paragraph("Customer Number").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(2) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table3.addCell(new Cell().add(new Paragraph("Date").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(3) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        total = customerDetail.getInt(4);
-                        table3.addCell(new Cell().add(new Paragraph("Bill ID").setFontSize(14)).setBorder(Border.NO_BORDER));
-                        table3.addCell(new Cell().add(new Paragraph(billId + "").setFontSize(14)).setBorder(Border.NO_BORDER));
-                    } while (customerDetail.moveToNext());
+                    Cursor customerDetail = DB.billTotal(billId);
+                    if (customerDetail.getCount() == 0) {
+                        Toast.makeText(ShowList.this, "No Entry Exist", Toast.LENGTH_SHORT).show();
+                        return;
+                    } else {
+                        customerDetail.moveToFirst();
+                        do {
+                            table3.addCell(new Cell().add(new Paragraph("Customer Name").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(1) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table3.addCell(new Cell().add(new Paragraph("Customer Number").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(2) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table3.addCell(new Cell().add(new Paragraph("Date").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table3.addCell(new Cell().add(new Paragraph(customerDetail.getString(3) + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            total = customerDetail.getInt(4);
+                            table3.addCell(new Cell().add(new Paragraph("Bill ID").setFontSize(14)).setBorder(Border.NO_BORDER));
+                            table3.addCell(new Cell().add(new Paragraph(billId + "").setFontSize(14)).setBorder(Border.NO_BORDER));
+                        } while (customerDetail.moveToNext());
 
-                }
+                    }
 
 //        Table 3 do this
 //        Want display |||||| product=1 price=2 quantity=3 subtotal=4 TOTAL
 
-                float cWidth2[] = {270, 100, 100, 100};
-                Table table2 = new Table(cWidth2);
+                    float cWidth2[] = {270, 100, 100, 100};
+                    Table table2 = new Table(cWidth2);
 
-                table2.addCell(new Cell().add(new Paragraph("Product Name")));
-                table2.addCell(new Cell().add(new Paragraph("Product Price")));
-                table2.addCell(new Cell().add(new Paragraph("Product Quantity")));
-                table2.addCell(new Cell().add(new Paragraph("Sub Total")));
+                    table2.addCell(new Cell().add(new Paragraph("Product Name")));
+                    table2.addCell(new Cell().add(new Paragraph("Product Price")));
+                    table2.addCell(new Cell().add(new Paragraph("Product Quantity")));
+                    table2.addCell(new Cell().add(new Paragraph("Sub Total")));
 
-                Cursor list = DB.displayList(billId);
-                if (list.getCount() == 0) {
-                    Toast.makeText(ShowList.this, "No Entry Exist", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    list.moveToFirst();
-                    do {
-                        table2.addCell(new Cell().add(new Paragraph(list.getString(1) + "")));
-                        table2.addCell(new Cell().add(new Paragraph(list.getString(2) + "")));
-                        table2.addCell(new Cell().add(new Paragraph(list.getString(3) + "")));
-                        table2.addCell(new Cell().add(new Paragraph(list.getString(4) + "")));
-                    } while (list.moveToNext());
-                }
+                    Cursor list = DB.displayList(billId);
+                    if (list.getCount() == 0) {
+                        Toast.makeText(ShowList.this, "No Entry Exist", Toast.LENGTH_SHORT).show();
+                        return;
+                    } else {
+                        list.moveToFirst();
+                        do {
+                            table2.addCell(new Cell().add(new Paragraph(list.getString(1) + "")));
+                            table2.addCell(new Cell().add(new Paragraph(list.getString(2) + "")));
+                            table2.addCell(new Cell().add(new Paragraph(list.getString(3) + "")));
+                            table2.addCell(new Cell().add(new Paragraph(list.getString(4) + "")));
+                        } while (list.moveToNext());
+                    }
 
-                table2.addCell(new Cell(1, 3).add(new Paragraph("Total")));
-                table2.addCell(new Cell().add(new Paragraph(total + "")));
+                    table2.addCell(new Cell(1, 3).add(new Paragraph("Total")));
+                    table2.addCell(new Cell().add(new Paragraph(total + "")));
 
 //                Displaying data
-                document.add(table1);
-                document.add(new Paragraph("\n"));
-                document.add(table3);
-                document.add(new Paragraph("\n"));
-                document.add(table2);
-                document.close();
-                Toast.makeText(ShowList.this, "PDF Created", Toast.LENGTH_SHORT).show();
+                    document.add(table1);
+                    document.add(new Paragraph("\n"));
+                    document.add(table3);
+                    document.add(new Paragraph("\n"));
+                    document.add(table2);
+                    document.close();
+                    Toast.makeText(ShowList.this, "PDF Created", Toast.LENGTH_SHORT).show();
 
 //                Opening PDf ---------------------------------
 
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
-                        if(file.exists()){
+                        if (file.exists()) {
 //                            Uri uri = Uri.parse(storageVolume.getDirectory()+"/Documents/"+filename);
 
                             Uri uri = FileProvider.getUriForFile(ShowList.this, getApplicationContext().getPackageName() + ".provider", file);
                             Log.d("pdfPath", "" + uri);
-//                            Log.d("ENimesh","URI = "+uri);
+
                             Intent intent = new Intent(Intent.ACTION_VIEW);
-                            intent.setDataAndType(uri,"application/pdf");
-                            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION|Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                            intent.setDataAndType(uri, "application/pdf");
+                            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                             startActivity(intent);
-                        }
-                        else{
+                        } else {
                             Toast.makeText(ShowList.this, "File can't be created", Toast.LENGTH_SHORT).show();
                         }
 
+                    }
+
                 }
-                Log.d("ENimesh","File naem = "+filename);
-            }}
+            }
 
         });
 

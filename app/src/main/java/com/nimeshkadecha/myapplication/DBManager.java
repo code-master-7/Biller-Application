@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class DBManager extends SQLiteOpenHelper {
     public DBManager(Context context) {
@@ -25,24 +24,24 @@ public class DBManager extends SQLiteOpenHelper {
         DB.execSQL("CREATE TABLE users(name TEXT,email TEXT primary key,password TEXT ,gst TEXT,contact TEXT ,address TEXT)");
 
         DB.execSQL("Create table display(indexs Integer primary key autoincrement," +  // 0
-                                        "product TEXT ," + //1
-                                        "price TEXT," + //2
-                                        "quantity TEXT," + //3
-                                        "subtotal Integer," +//4
-                                        "customerName TEXT," +//5
-                                        "customerNumber TEXT," +//6
-                                        "date Date," +//7
-                                        "billId TEXT ," +//8
-                                        "seller TEXT," +//9
-                                        "backup Integer)");//10
+                "product TEXT ," + //1
+                "price TEXT," + //2
+                "quantity TEXT," + //3
+                "subtotal Integer," +//4
+                "customerName TEXT," +//5
+                "customerNumber TEXT," +//6
+                "date Date," +//7
+                "billId TEXT ," +//8
+                "seller TEXT," +//9
+                "backup Integer)");//10
 //        Customer table
         DB.execSQL("Create TABLE customer(billId TEXT primary key," +
-                                        "customerName TEXT," +
-                                        "customerNumber TEXT," +
-                                        "date Date," +
-                                        "total TEXT," +
-                                        "seller TEXT," +
-                                        "backup Integer)");
+                "customerName TEXT," +
+                "customerNumber TEXT," +
+                "date Date," +
+                "total TEXT," +
+                "seller TEXT," +
+                "backup Integer)");
     }
 
     @Override
@@ -410,27 +409,26 @@ public class DBManager extends SQLiteOpenHelper {
         }
     }
 
-//  Insert into customer automatically
-    boolean autoInsertCustomer(){
+    //  Insert into customer automatically
+    boolean autoInsertCustomer() {
         SQLiteDatabase DB = this.getWritableDatabase();
 
-        Cursor cursor1 = DB.rawQuery("Select * from display",null);
+        Cursor cursor1 = DB.rawQuery("Select * from display", null);
 
-        boolean check=false;
+        boolean check = false;
         cursor1.moveToFirst();
 //        int bid = cursor1.getInt(8);
         int bid = -1;
         String customerBID = null;
         String customerName = null;
         String customerNumber = null;
-        String BillDATE=null;
+        String BillDATE = null;
         String seler = null;
-        int total=0;
-        do{
-//            Log.d("ENimesh","indexes = "+Integer.parseInt(cursor1.getString(8)));
-            if(bid == Integer.parseInt(cursor1.getString(8))){
+        int total = 0;
+        do {
+            if (bid == Integer.parseInt(cursor1.getString(8))) {
                 continue;
-            }else{
+            } else {
                 customerBID = cursor1.getString(8);
                 customerName = cursor1.getString(5);
                 customerNumber = cursor1.getString(6);
@@ -438,19 +436,18 @@ public class DBManager extends SQLiteOpenHelper {
                 seler = cursor1.getString(9);
                 total += cursor1.getInt(4);
 
-                boolean Insert = InsertCustomer(customerBID,customerName,customerNumber,BillDATE,seler,1);
-                if(Insert){
+                boolean Insert = InsertCustomer(customerBID, customerName, customerNumber, BillDATE, seler, 1);
+                if (Insert) {
                     check = true;
-                }else{
+                } else {
                     check = false;
                 }
             }
-        }while (cursor1.moveToNext());
+        } while (cursor1.moveToNext());
 
-        if(check){
+        if (check) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
