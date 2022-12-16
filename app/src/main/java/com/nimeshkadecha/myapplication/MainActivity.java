@@ -162,7 +162,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Invalid information", Toast.LENGTH_SHORT).show();
             }
         } else if (!EV) {
-            Toast.makeText(this, "Invalid E-Mail", Toast.LENGTH_SHORT).show();
+            if (email.getText().length() == 0) {
+                Toast.makeText(this, "Please Enter E-Mail", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Invalid E-Mail", Toast.LENGTH_SHORT).show();
+            }
         } else if (!EP) {
             Toast.makeText(this, "Invalid Password", Toast.LENGTH_SHORT).show();
         } else {
