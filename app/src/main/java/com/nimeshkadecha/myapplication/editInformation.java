@@ -175,6 +175,7 @@ public class editInformation extends AppCompatActivity {
 //                        Going back to login after deleting user
                             Intent intent = new Intent(editInformation.this, MainActivity.class);
                             startActivity(intent);
+                            finish();
                             Toast.makeText(editInformation.this, "User DELETED", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(editInformation.this, "User NOT Deleted", Toast.LENGTH_SHORT).show();

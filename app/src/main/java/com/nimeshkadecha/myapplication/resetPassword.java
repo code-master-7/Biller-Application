@@ -66,6 +66,7 @@ public class resetPassword extends AppCompatActivity {
                 if (check) {
                     Toast.makeText(this, "Password reset Successfully", Toast.LENGTH_SHORT).show();
                     startActivity(gotoMAIN);
+                    finish();
                 } else {
                     Toast.makeText(this, "Password NOT reset Successfully", Toast.LENGTH_SHORT).show();
                 }

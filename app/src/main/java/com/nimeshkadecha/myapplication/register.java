@@ -123,6 +123,7 @@ public class register extends AppCompatActivity {
                 if (CheckOperation) {
                     Toast.makeText(this, "User Register Successfully", Toast.LENGTH_SHORT).show();
                     startActivity(login);
+                    finish();
                 } else {
                     Toast.makeText(this, "Fail to Register User", Toast.LENGTH_SHORT).show();
                 }

@@ -184,6 +184,7 @@ public class Additems extends AppCompatActivity {
                 intent2.putExtra("billId", billIdtxt);
 
                 startActivity(intent2);
+                finish();
             }
         });
     }

@@ -136,6 +136,7 @@ public class ShowList extends AppCompatActivity {
                 intent3.putExtra("date", date);
                 intent3.putExtra("billId", billId);
                 startActivity(intent3);
+                finish();
             }
         });
 

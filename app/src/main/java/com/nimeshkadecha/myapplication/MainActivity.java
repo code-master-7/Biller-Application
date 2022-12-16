@@ -143,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
     public void register(View view) {
         Intent register = new Intent(this, register.class);
         startActivity(register);
+        finish();
     }
 
     //    Going to HOME Page if ID Password Is correct----------------------------------------------
@@ -158,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
             if (verify) {
                 SucessfullyLogin.putExtra("Email", emailTXT);
                 startActivity(SucessfullyLogin);
+                finish();
             } else {
                 Toast.makeText(this, "Invalid information", Toast.LENGTH_SHORT).show();
             }
@@ -179,5 +181,6 @@ public class MainActivity extends AppCompatActivity {
         Intent forgotpassword = new Intent(this, ForgotPassword.class);
 
         startActivity(forgotpassword);
+        finish();
     }
 }

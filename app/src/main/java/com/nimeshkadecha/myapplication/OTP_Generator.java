@@ -62,8 +62,6 @@ public class OTP_Generator extends AppCompatActivity {
         verifyy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ;
-
                 otp = findViewById(R.id.OTP);
                 String otpInput = otp.getText().toString();
                 boolean OTP_V = OTPValidate(otpInput);
@@ -77,6 +75,7 @@ public class OTP_Generator extends AppCompatActivity {
                         GoToResetPassword.putExtra("number", number);
 
                         startActivity(GoToResetPassword);
+                        finish();
                     } else {
                         Toast.makeText(OTP_Generator.this, "Wrong OTP", Toast.LENGTH_SHORT).show();
                     }
